@@ -1,4 +1,4 @@
-export interface responseLeague {
+export interface ResponseLeague {
   country_name: String;
   league_id: String;
   league_name: String;
