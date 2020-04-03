@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FootyService } from "./footy.service";
-import { ResponseLeague } from './interface';
+import { ResponseLeague, League } from './interface';
 
 @Component({
   selector: "app-root",
@@ -9,14 +9,14 @@ import { ResponseLeague } from './interface';
 })
 export class AppComponent {
   title = "servicesFooty";
-  storedData:ResponseLeague;
+  storedData:League;
   constructor(private footy: FootyService) {}
 
   clicker() {
-    this.footy.getLeagueStand().subscribe(data => {
-      this.storedData = data[0].country_name;
+    this.footy.getLeagueStand().subscribe((data:ResponseLeague) => {
+      this.storedData = data[0];
       console.log('my response', this.storedData);
-      console.log('from data response', data[0]);
+      console.log('from data response', data);
     });
   }
 }
