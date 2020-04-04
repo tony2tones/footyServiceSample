@@ -1,15 +1,13 @@
-<button class="button" (click)="clicker()"><div class="label">CLICK ME</div></button>
-<p> this works </p>
+<button class="button" (click)="clicker()">
+  <div class="label">CLICK ME</div>
+</button>
+<p>this works</p>
 
 <h3>response</h3>
-<div>{{ storedData.data }}
-</div>
-<!-- <h3>League position</h3>
-<div>{{ storedData.overall_league_position }}
-</div>
+<h2>{{ teamName }}</h2>
+<h3>League position</h3>
+<div>{{ position }}</div>
 <h3>League games played</h3>
-<div>{{ storedData.overall_league_payed }}
-</div>
+<div>{{ gamesPlayed }}</div>
 <h3>League wins</h3>
-<div>{{ storedData.overall_league_W }}
-</div> -->
+<div>{{ wins }}</div>

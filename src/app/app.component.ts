@@ -9,13 +9,20 @@ import { ResponseLeague, League } from './interface';
 })
 export class AppComponent {
   title = "servicesFooty";
-  storedData:League;
+  teamName:string
+  position:string
+  gamesPlayed:string
+  wins:string
   constructor(private footy: FootyService) {}
 
   clicker() {
-    this.footy.getLeagueStand().subscribe((data:ResponseLeague) => {
-      this.storedData = data[0];
-      console.log('my response', this.storedData);
+    this.footy.getLeagueStand().subscribe(data => {
+      this.teamName = data[0].team_name;
+      this.position = data[0].overall_league_position;
+      this.gamesPlayed = data[0].overall_league_payed;
+      this.wins = data[0].overall_league_W;
+
+      console.log('my response', this.teamName);
       console.log('from data response', data);
     });
   }
